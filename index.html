@@ -13,8 +13,7 @@
       zoom: 75%;
     }
 
-    .div-border {
-      border: solid 1px white;
+    .div-section {
       padding: 20px;
     }
 
@@ -37,17 +36,17 @@
 
   <div style="display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; gap: 20px;">
 
-    <div id="panelCamera" class="div-border" style="display: flex; flex-direction: column;">
+    <div id="panelCamera" class="div-section" style="display: flex; flex-direction: column;">
       <div class="div-large div-header">Camera Source:</div>
       <select id="cameraSource" style="min-width: 250px; height: 60px; font-size: 2em"></select>
     </div>
 
-    <div class="div-border" style="display: flex; flex-direction: column;">
+    <div class="div-section" style="display: flex; flex-direction: column;">
       <div class="div-large div-header">Video:</div>
       <video class="div-video" id="video" width="640" height="480" autoplay></video>
     </div>
 
-    <div class="div-border" style="display: flex; flex-direction: column;">
+    <div class="div-section" style="display: flex; flex-direction: column;">
       <div style="display: flex; flex-direction: row;">
         <div class="div-large div-header">Canvas:</div>
         <div class="div-large" style="margin-left: 20px">(</div>
@@ -57,9 +56,9 @@
       <canvas class="div-video" id="canvasRender" width="640" height="480"></canvas>
     </div>
 
-    <div class="div-border" style="display: flex; flex-direction: column;">
+    <div class="div-section" style="display: flex; flex-direction: column;">
       <div class="div-large div-header">Debug Log:</div>
-      <div class="div-large" id="debugLog"></div>
+      <div id="debugLog" style="font-size: 1.5em"></div>
     </div>
 
   </div>
