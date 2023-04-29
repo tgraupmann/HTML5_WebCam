@@ -4,7 +4,7 @@ var console = {
     for (let i = 0; i < arguments.length; i++) {
       let arg = arguments[i];
       if (arg) {
-        debugLog.innerText += arg + '| ' + "\r\n";
+        debugLog.innerText += arg + "\r\n";
       }
     }
   },
@@ -13,7 +13,7 @@ var console = {
     for (let i = 0; i < arguments.length; i++) {
       let arg = arguments[i];
       if (arg) {
-        debugLog.innerText += arg + '| ' + "\r\n";
+        debugLog.innerText += arg + "\r\n";
       }
     }
   },
@@ -22,7 +22,7 @@ var console = {
     for (let i = 0; i < arguments.length; i++) {
       let arg = arguments[i];
       if (arg) {
-        debugLog.innerText += arg + '| ' + "\r\n";
+        debugLog.innerText += arg + "\r\n";
       }
     }
   }
@@ -30,8 +30,6 @@ var console = {
 
 console.log('script.js version 0.1');
 
-
-document.body.style.zoom = "75%"; //use when capturing video
 
 var localStorage = window.localStorage;
 var cameraSelect = document.querySelector('select#cameraSource');
@@ -115,6 +113,26 @@ async function requestPermissions() {
     requestPermissions();
   }, 3000);
 }
+
+const canvas = document.getElementById("canvasRender");
+const ctx = canvas.getContext("2d");
+const video = document.getElementById("video");
+const divFrames = document.getElementById("divFrames");
+
+var framesPerSecond = 0;
+setInterval(function () {
+  divFrames.innerText = framesPerSecond;
+  framesPerSecond = 0;
+}, 1000);
+
+video.addEventListener("play", () => {
+  function render() {
+    ++framesPerSecond;
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+});
 
 async function pageLoad() {
 

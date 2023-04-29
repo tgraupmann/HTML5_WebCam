@@ -6,10 +6,12 @@
     body {
       background: black;
       color: white;
+      zoom: 75%;
     }
 
     .div-border {
-      border: solid 1px white
+      border: solid 1px white;
+      padding: 20px;
     }
 
     .div-large {
@@ -20,26 +22,40 @@
     .div-header {
       margin-bottom: 20px;
     }
+
+    .div-video {
+      border: solid 1px red;
+    }
   </style>
 </head>
 
 <body>
 
-  <div style="display: flex; flex-direction: row; gap: 50px; justify-content: space-evenly;">
+  <div style="display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; gap: 20px;">
 
-    <div id="panelVideo" class="div-border" style="display: flex; flex-direction: column; gap: 20px;">
-      <div class="div-large div-header">Video:</div>
-      <video id="video" width="640" height="480" autoplay></video>
-    </div>
-
-    <div id="panelCamera" class="div-border" style="display: flex; flex-direction: column; gap: 20px;">
+    <div id="panelCamera" class="div-border" style="display: flex; flex-direction: column;">
       <div class="div-large div-header">Camera Source:</div>
-      <select id="cameraSource" style="width: 250px"></select>
+      <select id="cameraSource" style="min-width: 250px; height: 60px; font-size: 2em"></select>
     </div>
 
-    <div class="div-border" style="display: flex; flex-direction: column; width: 100%">
+    <div class="div-border" style="display: flex; flex-direction: column;">
+      <div class="div-large div-header">Video:</div>
+      <video class="div-video" id="video" width="640" height="480" autoplay></video>
+    </div>
+
+    <div class="div-border" style="display: flex; flex-direction: column;">
+      <div style="display: flex; flex-direction: row;">
+        <div class="div-large div-header">Canvas:</div>
+        <div class="div-large" style="margin-left: 20px">(</div>
+        <div class="div-large" id="divFrames">0</div>
+        <div class="div-large">&nbsp;fps)</div>
+      </div>
+      <canvas class="div-video" id="canvasRender" width="640" height="480"></canvas>
+    </div>
+
+    <div class="div-border" style="display: flex; flex-direction: column;">
       <div class="div-large div-header">Debug Log:</div>
-      <div id="debugLog"></div>
+      <div class="div-large" id="debugLog"></div>
     </div>
 
   </div>
