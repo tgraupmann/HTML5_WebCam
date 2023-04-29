@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>HTML5 Web Camera</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+    }
+
+    .div-border {
+      border: solid 1px white
+    }
+
+    .div-large {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .div-header {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div style="display: flex; flex-direction: row; gap: 50px; justify-content: space-evenly;">
+
+    <div id="panelVideo" class="div-border" style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="div-large div-header">Video:</div>
+      <video id="video" width="640" height="480" autoplay></video>
+    </div>
+
+    <div id="panelCamera" class="div-border" style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="div-large div-header">Camera Source:</div>
+      <select id="cameraSource" style="width: 250px"></select>
+    </div>
+
+    <div class="div-border" style="display: flex; flex-direction: column; width: 100%">
+      <div class="div-large div-header">Debug Log:</div>
+      <div id="debugLog"></div>
+    </div>
+
+  </div>
+
+  <script src="js/video.js"></script>
+</body>
+
+</html>

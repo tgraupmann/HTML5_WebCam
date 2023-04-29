@@ -1,0 +1,15 @@
+{
+  "name": "localnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ServerNode.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Graupmann",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0"
+  }
+}
